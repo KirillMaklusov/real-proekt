@@ -11,7 +11,7 @@ dp = Dispatcher()
 async def start_cmd(message: types.Message):
     await message.answer("Это была команда старт!")
 
-@dp.message
+@dp.message()
 async def echo(message: types.Message):
     await message.answer(message.text)
 
