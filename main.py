@@ -3,6 +3,7 @@ import asyncio
 from aiogram import Bot, Dispatcher, types
 from aiogram.filters import CommandStart
 from dotenv import find_dotenv, load_dotenv
+from loguru import logger
 
 load_dotenv(find_dotenv())
 TOKEN = os.getenv("TOKEN")
@@ -19,10 +20,13 @@ async def start_cmd(message: types.Message):
 # async def echo(message: types.Message):
     # await message.answer(message.text)
 
-    @dp.message()
-    async def convers(message: types.Message):
-       if message.text == "Я гей":
-          await message.answer("Я тоже")
+@dp.message()
+async def convers(message: types.Message):
+    if message.text == "Я гей":
+        await message.answer("Я тоже")
+
+# @dp.message()
+# async def convers(message: types.Message)
 
 
 async def main():
