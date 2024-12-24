@@ -15,9 +15,15 @@ dp = Dispatcher()
 async def start_cmd(message: types.Message):
     await message.answer("Это была команда старт!")
 
-@dp.message()
-async def echo(message: types.Message):
-    await message.answer(message.text)
+# @dp.message()
+# async def echo(message: types.Message):
+    # await message.answer(message.text)
+
+    @dp.message()
+    async def convers(message: types.Message):
+       if message.text == "Я гей":
+          await message.answer("Я тоже")
+
 
 async def main():
     await dp.start_polling(bot)
